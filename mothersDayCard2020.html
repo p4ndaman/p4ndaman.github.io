@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy Mother's Day and Birthday!</title>
   <!-- Shamelessly taken from:
     * https://stackoverflow.com/questions/34046098/css-animation-greeting-card-open-close
@@ -22,6 +22,9 @@
       height: 800px;
       position: relative;
       -webkit-perspective: 700;
+      -ms-perspective: 700;
+      -moz-perspective: 700;
+      perspective: 700;
       margin: 100px auto;
       cursor: pointer;
     }
@@ -37,45 +40,77 @@
       width: 100%;
       height: 100%;
       -webkit-backface-visibility: visible;
+      -ms-backface-visibility: visible;
+      -moz-backface-visibility: visible;
+      backface-visibility: visible;
       -webkit-transition: all 0.5s ease-out;
+      -ms-transition: all 0.5s ease-out;
+      -moz-transition: all 0.5s ease-out;
+      transition: all 0.5s ease-out;
       -webkit-transform-origin: 0 0;
+      -ms-transform-origin: 0 0;
+      -moz-transform-origin: 0 0;
+      transform-origin: 0 0;
     }
 
     .front {
       -webkit-transform: rotateY(0deg);
+      -ms-transform: rotateY(0deg);
+      -moz-transform: rotateY(0deg);
+      transform: rotateY(0deg);
       z-index: 3;
       -webkit-backface-visibility: hidden;
+      -ms-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      backface-visibility: hidden;
     }
 
     .inner-left {
       -webkit-transform: rotateY(0deg);
+      -ms-transform: rotateY(0deg);
+      -moz-transform: rotateY(0deg);
+      transform: rotateY(0deg);
       z-index: 2;
     }
 
     .inner-left > img {
       -webkit-transform: rotateY(180deg);
+      -ms-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      transform: rotateY(180deg);
     }
 
     .inner-right {
       -webkit-transform: rotateY(0deg);
+      -ms-transform: rotateY(0deg);
+      -moz-transform: rotateY(0deg);
+      transform: rotateY(0deg);
       z-index: 1;
     }
 
     .card:hover .front,
     .card:hover .inner-left {
       -webkit-transform: rotateY(-5deg);
+      -ms-transform: rotateY(-5deg);
+      -moz-transform: rotateY(-5deg);
+      transform: rotateY(-5deg);
     }
 
     .card-toggle:checked + .card .front,
     .card-toggle:checked + .card .inner-left {
       -webkit-transform: rotateY(-180deg);
+      -ms-transform: rotateY(-180deg);
+      -moz-transform: rotateY(-180deg);
+      transform: rotateY(-180deg);
     }
 
     .card-toggle:checked + .card .inner-right {
       -webkit-transform: rotateY(0deg);
+      -ms-transform: rotateY(0deg);
+      -moz-transform: rotateY(0deg);
+      transform: rotateY(0deg);
     }
   </style>
-  <!--<![endif]-->
 </head>
 <body style="Margin:0;padding:0;min-width:100%;background-image:url('grey_background.jpg');background-size: cover;">
   <div class='cards'>
