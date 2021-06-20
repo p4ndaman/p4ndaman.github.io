@@ -1,8 +1,8 @@
 @import "compass/css3";
 
 // toggle the cube dimensions here.
-$cubeWidth: 450px;
-$cubeHeight: 450px;
+$cubeWidth: 400px;
+$cubeHeight: 400px;
 $cubeDepth: $cubeHeight;
 
 body {
@@ -12,8 +12,16 @@ body {
   font-family: Arial;
 }
 
+.large_separator {
+  margin-top: 150px;
+}
+
 .separator {
-  margin-top: 100px;
+  margin-top: 90px;
+}
+
+.small_separator {
+  margin-top: 30px;
 }
   
 .twitter {

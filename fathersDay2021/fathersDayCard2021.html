@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Mother's Day and Birthday!</title>
+  <title>Happy Fathers's Day!</title>
   <!-- Shamelessly taken from:
     * https://stackoverflow.com/questions/34046098/css-animation-greeting-card-open-close
     * http://jsfiddle.net/danwad/92sp63L1/
@@ -110,6 +110,12 @@
       -moz-transform: rotateY(0deg);
       transform: rotateY(0deg);
     }
+    .scripty_a {
+      font-family: papyrus;
+    }
+    .scripty_b {
+      font-family: 'ITC Zapf Chancery', cursive;
+    }
   </style>
   <link rel="stylesheet" href="stylesheets/cube3.css">
 </head>
@@ -117,13 +123,14 @@
   <div class='cards'>
   <input type="checkbox" id="card-toggle-1" class="card-toggle" value="selected">
   <label class='card' for="card-toggle-1">
-    <div class='front face'>
-      <img src='stylesheets/photos/white.jpg' />
+    <div class="front face">
+      <img src='stylesheets/photos/front_card.jpg' />
     </div>
     <div class="inner-left face">
       <img src='stylesheets/photos/white.jpg' />
     </div>
     <div class="inner-right face">
+      <div class="small_separator"></div>
     <!-- CONTROLS -->
       <input type="radio" checked id="radio-front" name="select-face"/>    
       <input type="radio" id="radio-left" name="select-face"/>
@@ -145,7 +152,9 @@
       </div>
     </div>
 
-    <div class="separator"></div>
+    <div class="large_separator"></div>
+    <div class="scripty_a">To all of these memories and many more to come!<br>Love,</div>
+    <div class="scripty_b">Mayur and Mamta</div>
     <br><br>
 
     </div>
