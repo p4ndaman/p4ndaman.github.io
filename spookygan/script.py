@@ -214,11 +214,13 @@ def train(i):
 
 #@title Generate an Image
 import argparse
-text_prompts = "Dracula muscular old male face pale white skin fangs slicked back hair" #@param {type:"string"}
+# text_prompts = "Dracula muscular old male face pale white skin fangs slicked back hair" #@param {type:"string"}
+# text_prompts = "Dracula male with pale face, white skin, bloody fangs, and slicked-back hair" #@param {type:"string"}
+text_prompts = "Harry Potter Wizard" #@param {type:"string"}
 width =  608#@param {type:"number"}
 height =  752#@param {type:"number"}
 display_frequency =  1#@param {type:"number"}
-initial_image = "content/new.jpg"#@param {type:"string"}
+initial_image = "content/input/mp_haircut.jpg"#@param {type:"string"}
 target_images = ""#@param {type:"string"}
 learning_rate = 0.1 #@param {type:"slider", min:0.001, max:1.0, step:0.001}
 max_iterations = 10000#@param {type:"number"}
@@ -324,7 +326,7 @@ try:
         while True:
             print(f"train iter {i}")
             train(i)
-            src = "steps/" + str(i).zfill(4) + ".png"
+            src = "content/steps/" + str(i).zfill(4) + ".png"
             shutil.copyfile(src, "content/out.png")
             if i == max_iterations:
                 break
@@ -333,6 +335,3 @@ try:
             
 except KeyboardInterrupt:
     pass
-
-src = "steps/" + str(max_iterations-1).zfill(4) + ".png"
-shutil.copyfile(src, "content/out.png")

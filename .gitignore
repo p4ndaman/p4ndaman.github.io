@@ -6,3 +6,5 @@ spookygan/taming
 spookygan/taming-transformers
 spookygan/content/wikiart_16384.ckpt
 spookygan/content/wikiart_16384.yaml
+spookygan/content/input
+spookygan/content/steps_*
