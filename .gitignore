@@ -1,1 +1,8 @@
 .sass-cache
+spookygan/venv
+spookygan/.ipynb_checkpoints
+spookygan/CLIP
+spookygan/taming
+spookygan/taming-transformers
+spookygan/content/wikiart_16384.ckpt
+spookygan/content/wikiart_16384.yaml
