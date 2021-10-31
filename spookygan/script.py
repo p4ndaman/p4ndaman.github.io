@@ -195,7 +195,7 @@ def ascend_txt():
         result.append(prompt(iii))
     img = np.array(out.mul(255).clamp(0, 255)[0].cpu().detach().numpy().astype(np.uint8))[:,:,:]
     img = np.transpose(img, (1, 2, 0))
-    filename = f"steps/{i:04}.png"
+    filename = f"content/steps/{i:04}.png"
     imageio.imwrite(filename, np.array(img))
     return result
 
@@ -220,7 +220,7 @@ text_prompts = "Harry Potter Wizard" #@param {type:"string"}
 width =  608#@param {type:"number"}
 height =  752#@param {type:"number"}
 display_frequency =  1#@param {type:"number"}
-initial_image = "content/input/mp_haircut.jpg"#@param {type:"string"}
+initial_image = "content/input/mp_glasses.jpg"#@param {type:"string"}
 target_images = ""#@param {type:"string"}
 learning_rate = 0.1 #@param {type:"slider", min:0.001, max:1.0, step:0.001}
 max_iterations = 10000#@param {type:"number"}
