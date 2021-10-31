@@ -81,6 +81,7 @@ target_images = args.target_image #@param {type:"string"}
 learning_rate = 0.1 #@param {type:"slider", min:0.001, max:1.0, step:0.001}
 max_iterations = args.max_iterations#@param {type:"number"}
 steps_path = args.steps_path
+output_path = args.output
 
  
 def sinc(x):
@@ -374,7 +375,7 @@ try:
             print(f"train iter {i}")
             train(i)
             src = steps_path + "/" + str(i).zfill(4) + ".png"
-            shutil.copyfile(src, "content/out.png")
+            shutil.copyfile(src, output_path)
             if i == max_iterations:
                 break
             i += 1
