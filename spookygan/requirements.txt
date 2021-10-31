@@ -11,3 +11,5 @@ transformers
 IPython
 Pillow
 imageio
+jupyter
+ipywidgets
