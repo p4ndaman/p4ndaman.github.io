@@ -1,10 +1,13 @@
 ftfy
 regex
 tqdm
-#git+https://github.com/openai/CLIP.git
-#git+https://github.com/CompVis/taming-transformers
+git+https://github.com/openai/CLIP.git
+git+https://github.com/CompVis/taming-transformers
 omegaconf
 pytorch-lightning
 kornia
 einops
-transformers 
+transformers
+IPython
+Pillow
+imageio
