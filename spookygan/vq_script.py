@@ -368,7 +368,7 @@ try:
     with tqdm() as pbar:
         while True:
             train(i)
-            src = steps_path + "/" + str(max_iterations-1).zfill(4) + ".png"
+            src = steps_path + "/" + str(i).zfill(4) + ".png"
             shutil.copyfile(src, output_path)
             if i == max_iterations:
                 break
