@@ -1,0 +1,10 @@
+ftfy
+regex
+tqdm
+#git+https://github.com/openai/CLIP.git
+omegaconf
+pytorch-lightning
+kornia
+einops
+transformers   
+taming.models 
