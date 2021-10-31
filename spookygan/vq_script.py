@@ -48,7 +48,7 @@ width =  608#@param {type:"number"}
 height =  752#@param {type:"number"}
 display_frequency =  1#@param {type:"number"}
 initial_image = args.input_image #@param {type:"string"}
-target_images = ""#@param {type:"string"}
+target_images = args.target_image#@param {type:"string"}
 learning_rate = 0.1 #@param {type:"slider", min:0.001, max:1.0, step:0.001}
 max_iterations = args.max_iterations #@param {type:"number"}
 steps_path = args.steps_path
@@ -312,7 +312,7 @@ else:
 torch.manual_seed(seed)
 print('Using seed:', seed)
 
-model = load_vqgan_model("/content/wikiart_16384.yaml", "/content/wikiart_16384.ckpt").to(device)
+model = load_vqgan_model("content/wikiart_16384.yaml", "content/wikiart_16384.ckpt").to(device)
 perceptor = clip.load(args.clip_model, jit=False)[0].eval().requires_grad_(False).to(device)
 
 cut_size = perceptor.visual.input_resolution
@@ -368,6 +368,8 @@ try:
     with tqdm() as pbar:
         while True:
             train(i)
+            src = steps_path + "/" + str(max_iterations-1).zfill(4) + ".png"
+            shutil.copyfile(src, output_path)
             if i == max_iterations:
                 break
             i += 1
@@ -375,5 +377,3 @@ try:
 except KeyboardInterrupt:
     pass
 
-src = "/content/steps/" + str(max_iterations-1).zfill(4) + ".png"
-shutil.copyfile(src, "/content/out.png")
