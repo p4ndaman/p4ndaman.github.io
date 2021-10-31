@@ -4,4 +4,5 @@ while true; do
 	git commit -m "update"
 	git push
 	echo "--------------"
+	sleep 300
 done
