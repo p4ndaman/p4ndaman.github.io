@@ -67,18 +67,20 @@ parser.add_argument(
     default='content/out.png',
     help='Output file name',
 )
+args = parser.parse_args()
+
 
 # text_prompts = "Dracula muscular old male face pale white skin fangs slicked back hair" #@param {type:"string"}
 # text_prompts = "Dracula male with pale face, white skin, bloody fangs, and slicked-back hair" #@param {type:"string"}
-text_prompts = parser.input_text_prompt #@param {type:"string"}
+text_prompts = args.input_text_prompt #@param {type:"string"}
 width =  608#@param {type:"number"}
 height =  752#@param {type:"number"}
 display_frequency =  1#@param {type:"number"}
-initial_image = parser.input_image #@param {type:"string"}
-target_images = parser.target_image #@param {type:"string"}
+initial_image = args.input_image #@param {type:"string"}
+target_images = args.target_image #@param {type:"string"}
 learning_rate = 0.1 #@param {type:"slider", min:0.001, max:1.0, step:0.001}
-max_iterations = parser.max_iterations#@param {type:"number"}
-steps_path = parser.steps_path
+max_iterations = args.max_iterations#@param {type:"number"}
+steps_path = args.steps_path
 
  
 def sinc(x):
