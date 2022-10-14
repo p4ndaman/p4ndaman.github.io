@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday, Dad!</title>
+  <!-- Shamelessly taken from:
+    * https://stackoverflow.com/questions/34046098/css-animation-greeting-card-open-close
+    * http://jsfiddle.net/danwad/92sp63L1/
+  -->
+  <style type="text/css">
+    .cards {}
+
+    .card-toggle {
+      display: none;
+    }
+
+    .card {
+      display: block;
+      width: 800px;
+      height: 800px;
+      position: relative;
+      -webkit-perspective: 2800;
+      -ms-perspective: 2800;
+      -moz-perspective: 2800;
+      perspective: 2800;
+      margin: 100px auto;
+      cursor: pointer;
+    }
+
+    .card:hover .face {
+      -webkit-transition: all 0.3s ease-out;
+    }
+
+    .face {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: visible;
+      -ms-backface-visibility: visible;
+      -moz-backface-visibility: visible;
+      backface-visibility: visible;
+      -webkit-transition: all 0.5s ease-out;
+      -ms-transition: all 0.5s ease-out;
+      -moz-transition: all 0.5s ease-out;
+      transition: all 0.5s ease-out;
+      -webkit-transform-origin: 0 0;
+      -ms-transform-origin: 0 0;
+      -moz-transform-origin: 0 0;
+      transform-origin: 0 0;
+    }
+
+    .front {
+      -webkit-transform: rotateY(0deg);
+      -ms-transform: rotateY(0deg);
+      -moz-transform: rotateY(0deg);
+      transform: rotateY(0deg);
+      z-index: 3;
+      -webkit-backface-visibility: hidden;
+      -ms-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+
+    .inner-left {
+      -webkit-transform: rotateY(0deg);
+      -ms-transform: rotateY(0deg);
+      -moz-transform: rotateY(0deg);
+      transform: rotateY(0deg);
+      z-index: 2;
+    }
+
+    .inner-left > img {
+      -webkit-transform: rotateY(180deg);
+      -ms-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      transform: rotateY(180deg);
+    }
+
+    .inner-right {
+      -webkit-transform: rotateY(0deg);
+      -ms-transform: rotateY(0deg);
+      -moz-transform: rotateY(0deg);
+      transform: rotateY(0deg);
+      z-index: 1;
+      background-image: url('stylesheets/photos/white.jpg');
+    }
+
+    .card:hover .front,
+    .card:hover .inner-left {
+      -webkit-transform: rotateY(-20deg);
+      -ms-transform: rotateY(-20deg);
+      -moz-transform: rotateY(-20deg);
+      transform: rotateY(-20deg);
+    }
+
+    .card-toggle:checked + .card .front,
+    .card-toggle:checked + .card .inner-left {
+      -webkit-transform: rotateY(-180deg);
+      -ms-transform: rotateY(-180deg);
+      -moz-transform: rotateY(-180deg);
+      transform: rotateY(-180deg);
+    }
+
+    .card-toggle:checked + .card .inner-right {
+      -webkit-transform: rotateY(0deg);
+      -ms-transform: rotateY(0deg);
+      -moz-transform: rotateY(0deg);
+      transform: rotateY(0deg);
+    }
+    .scripty_a {
+      font-family: papyrus;
+    }
+    .scripty_b {
+      font-family: 'ITC Zapf Chancery', cursive;
+    }
+  </style>
+  <link rel="stylesheet" href="stylesheets/cube3.css">
+</head>
+<body style="Margin:0;padding:0;min-width:100%;background-image:url('stylesheets/photos/background.jpg');background-size: cover;">
+  <div class='cards'>
+  <input type="checkbox" id="card-toggle-1" class="card-toggle" value="selected">
+  <label class='card' for="card-toggle-1">
+    <div class="front face">
+      <img src='stylesheets/photos/front_card.jpg' />
+    </div>
+    <div class="inner-left face">
+      <img src='stylesheets/photos/white.jpg' />
+    </div>
+    <div class="inner-right face">
+      <div class="small_separator"></div>
+    <!-- CONTROLS -->
+      <input type="radio" checked id="radio-front" name="select-face"/>    
+      <input type="radio" id="radio-left" name="select-face"/>
+      <input type="radio" id="radio-right" name="select-face"/>
+      <input type="radio" id="radio-top" name="select-face"/>
+      <input type="radio" id="radio-bottom" name="select-face"/>
+      <input type="radio" id="radio-back" name="select-face"/>
+
+    <div class="separator"></div>
+
+    <div class="space3d">
+      <div class="_3dbox">
+        <div class="_3dface _3dface--front"></div>
+        <div class="_3dface _3dface--top"></div>
+        <div class="_3dface _3dface--bottom"></div>
+        <div class="_3dface _3dface--left"></div>
+        <div class="_3dface _3dface--right"></div>
+        <div class="_3dface _3dface--back"></div>
+      </div>
+    </div>
+
+    <div class="large_separator"></div>
+    <div class="scripty_a">Wishing you many more amazing years to come!<br>Love,</div>
+    <div class="scripty_b">Mayur and Mamta</div>
+    <br><br>
+
+    </div>
+  </label>        
+</body>
+</html>

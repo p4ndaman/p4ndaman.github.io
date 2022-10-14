@@ -1,0 +1,181 @@
+/* line 8, ../sass/cube3.scss */
+body {
+  color: #333;
+  padding: 20px;
+  text-align: center;
+  font-family: Arial;
+}
+
+/* line 15, ../sass/cube3.scss */
+.large_separator {
+  margin-top: 150px;
+}
+
+/* line 19, ../sass/cube3.scss */
+.separator {
+  margin-top: 90px;
+}
+
+/* line 23, ../sass/cube3.scss */
+.small_separator {
+  margin-top: 30px;
+}
+
+/* line 27, ../sass/cube3.scss */
+.twitter {
+  color: #FFF;
+  text-decoration: none;
+  border-radius: 4px;
+  background: #00ACED;
+  display: inline-block;
+  padding: 10px 8px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* 3D Cube */
+/* line 39, ../sass/cube3.scss */
+.space3d {
+  perspective: 1000px;
+  width: 400px;
+  height: 400px;
+  text-align: center;
+  display: inline-block;
+}
+
+/* line 47, ../sass/cube3.scss */
+._3dbox {
+  display: inline-block;
+  transition: all 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateX(-15deg) rotateY(15deg);
+}
+
+/* line 59, ../sass/cube3.scss */
+._3dface {
+  overflow: hidden;
+  position: absolute;
+  border: 1px solid #888;
+  background: #FFF;
+  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.1), 0 0 50px rgba(0, 0, 0, 0.3);
+  color: #333;
+  line-height: 400px;
+  opacity: 0.9;
+}
+
+/* line 73, ../sass/cube3.scss */
+._3dface--front {
+  width: 400px;
+  height: 400px;
+  transform: translate3d(0, 0, 200px);
+}
+
+/* line 79, ../sass/cube3.scss */
+._3dface--top {
+  width: 400px;
+  height: 400px;
+  transform: rotateX(90deg) translate3d(0, 0, 200px);
+}
+
+/* line 85, ../sass/cube3.scss */
+._3dface--bottom {
+  width: 400px;
+  height: 400px;
+  transform: rotateX(-90deg) translate3d(0, 0, 200px);
+}
+
+/* line 91, ../sass/cube3.scss */
+._3dface--left {
+  width: 400px;
+  height: 400px;
+  left: 50%;
+  margin-left: -200px;
+  transform: rotateY(-90deg) translate3d(0, 0, 200px);
+}
+
+/* line 100, ../sass/cube3.scss */
+._3dface--right {
+  width: 400px;
+  height: 400px;
+  left: 50%;
+  margin-left: -200px;
+  transform: rotateY(90deg) translate3d(0, 0, 200px);
+}
+
+/* line 109, ../sass/cube3.scss */
+._3dface--back {
+  width: 400px;
+  height: 400px;
+  transform: rotateY(180deg) translate3d(0, 0, 200px);
+}
+
+/* line 115, ../sass/cube3.scss */
+#radio-left:checked ~ .space3d ._3dbox {
+  transform: rotateY(90deg);
+}
+
+/* line 119, ../sass/cube3.scss */
+#radio-right:checked ~ .space3d ._3dbox {
+  transform: rotateY(-90deg);
+}
+
+/* line 123, ../sass/cube3.scss */
+#radio-bottom:checked ~ .space3d ._3dbox {
+  transform: rotateX(90deg);
+}
+
+/* line 127, ../sass/cube3.scss */
+#radio-top:checked ~ .space3d ._3dbox {
+  transform: rotateX(-90deg);
+}
+
+/* line 131, ../sass/cube3.scss */
+#radio-back:checked ~ .space3d ._3dbox {
+  transform: rotateY(180deg);
+}
+
+/* line 136, ../sass/cube3.scss */
+._3dface--front {
+  background: url(photos/sq_1.jpg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+/* line 142, ../sass/cube3.scss */
+._3dface--left {
+  background: url(photos/sq_2.jpg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+/* line 148, ../sass/cube3.scss */
+._3dface--right {
+  background: url(photos/sq_3.jpg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+/* line 154, ../sass/cube3.scss */
+._3dface--top {
+  background: url(photos/sq_4.jpg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+/* line 160, ../sass/cube3.scss */
+._3dface--bottom {
+  background: url(photos/sq_5.gif);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+/* line 166, ../sass/cube3.scss */
+._3dface--back {
+  background: url(photos/sq_6.gif);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
