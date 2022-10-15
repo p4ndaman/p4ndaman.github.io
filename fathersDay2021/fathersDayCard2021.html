@@ -8,6 +8,7 @@
     * https://stackoverflow.com/questions/34046098/css-animation-greeting-card-open-close
     * http://jsfiddle.net/danwad/92sp63L1/
   -->
+  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
   <style type="text/css">
     .cards {}
 
@@ -120,6 +121,8 @@
   <link rel="stylesheet" href="stylesheets/cube3.css">
 </head>
 <body style="Margin:0;padding:0;min-width:100%;background-image:url('stylesheets/photos/gran.png');background-size: cover;">
+  <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <div class='cards'>
   <input type="checkbox" id="card-toggle-1" class="card-toggle" value="selected">
   <label class='card' for="card-toggle-1">
@@ -131,33 +134,51 @@
     </div>
     <div class="inner-right face">
       <div class="small_separator"></div>
-    <!-- CONTROLS -->
-      <input type="radio" checked id="radio-front" name="select-face"/>    
-      <input type="radio" id="radio-left" name="select-face"/>
-      <input type="radio" id="radio-right" name="select-face"/>
-      <input type="radio" id="radio-top" name="select-face"/>
-      <input type="radio" id="radio-bottom" name="select-face"/>
-      <input type="radio" id="radio-back" name="select-face"/>
+      <!-- CONTROLS -->
+      <input type="radio" checked id="radio-front" tabindex=0 name="select-face"/>
+      <input type="radio" id="radio-left" tabindex=1 name="select-face"/>
+      <input type="radio" id="radio-right" tabindex=2 name="select-face"/>
+      <input type="radio" id="radio-top" tabindex=3 name="select-face"/>
+      <input type="radio" id="radio-bottom" tabindex=4 name="select-face"/>
+      <input type="radio" id="radio-back" tabindex=5 name="select-face"/>
 
-    <div class="separator"></div>
+      <div class="separator"></div>
 
-    <div class="space3d">
-      <div class="_3dbox">
-        <div class="_3dface _3dface--front"></div>
-        <div class="_3dface _3dface--top"></div>
-        <div class="_3dface _3dface--bottom"></div>
-        <div class="_3dface _3dface--left"></div>
-        <div class="_3dface _3dface--right"></div>
-        <div class="_3dface _3dface--back"></div>
+      <div id="cube3dContainer" class="space3d">
+        <div class="_3dbox">
+          <div class="_3dface _3dface--front"></div>
+          <div class="_3dface _3dface--top"></div>
+          <div class="_3dface _3dface--bottom"></div>
+          <div class="_3dface _3dface--left"></div>
+          <div class="_3dface _3dface--right"></div>
+          <div class="_3dface _3dface--back"></div>
+        </div>
       </div>
-    </div>
 
-    <div class="large_separator"></div>
-    <div class="scripty_a">To all of these memories and many more to come!<br>Love,</div>
-    <div class="scripty_b">Mayur and Mamta</div>
-    <br><br>
-
+      <div class="large_separator"></div>
+      <div class="scripty_a">To all of these memories and many more to come!<br>Love,</div>
+      <div class="scripty_b">Mayur and Mamta</div>
+      <br><br>
     </div>
-  </label>        
+  </label>
+  <script>
+    let numberFaces = 6;
+    document.getElementById("cube3dContainer").addEventListener("click", nextFace);
+
+    function nextFace(e) {
+      // make sure card stays open
+      document.getElementById('card-toggle-1').checked = false;
+
+      // Advance to next face
+      const currentSel = parseInt($('.inner-right input[type="radio"]:checked').attr("tabindex"));
+      const nextSel = (currentSel+1) % numberFaces;
+      const nextRadio = $('.inner-right input[type="radio"]')[nextSel]
+      console.debug(nextRadio)
+
+      const nextRadioId = nextRadio.id
+      document.getElementById(nextRadioId).checked = true;
+      // e.stopPropagation();
+    }
+  </script>
 </body>
 </html>
