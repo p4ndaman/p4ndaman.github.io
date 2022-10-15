@@ -135,13 +135,6 @@
     <div class="inner-right face">
       <div class="small_separator"></div>
       <!-- CONTROLS -->
-      <!-- <input type="radio" checked id="radio-0" tabindex=0 name="select-face"/>    
-      <input type="radio" id="radio-1" tabindex=1 name="select-face"/>
-      <input type="radio" id="radio-2" tabindex=2 name="select-face"/>
-      <input type="radio" id="radio-3" tabindex=3 name="select-face"/>
-      <input type="radio" id="radio-4" tabindex=4 name="select-face"/>
-      <input type="radio" id="radio-5" tabindex=5 name="select-face"/> -->
-
       <input type="radio" checked id="radio-front" tabindex=0 name="select-face"/>    
       <input type="radio" id="radio-left" tabindex=1 name="select-face"/>
       <input type="radio" id="radio-right" tabindex=2 name="select-face"/>
@@ -174,18 +167,11 @@
     
     function nextFace(e) {
       // make sure card stays open
-      // $(`card-toggle-1`).attr("checked", false);
       document.getElementById('card-toggle-1').checked = false;
-      // document.getElementById('radio-toggle-1')
-
+      
       // Advance to next face
       const currentSel = parseInt($('.inner-right input[type="radio"]:checked').attr("tabindex"));
-      console.log(currentSel);
       const nextSel = (currentSel+1) % numberFaces;
-      console.log(nextSel);
-      // $(`#radio-${nextSel}`).attr("checked", true);
-      // document.getElementById(`radio-${nextSel}`).checked = true;
-
       const nextRadio = $('.inner-right input[type="radio"]')[nextSel]
       console.debug(nextRadio)
 
